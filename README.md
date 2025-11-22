@@ -1,14 +1,18 @@
-# MailSafePro Email Validation Widget (Premium)
+# MailSafePro Premium Widget
 
-El estándar de la industria para la validación de correos electrónicos en el frontend. Convierte más usuarios con una experiencia de validación fluida, inteligente y hermosa.
+Una solución de validación frontend de clase empresarial diseñada para maximizar la conversión y la calidad de los datos. Ingeniería de precisión encapsulada en un componente ligero y sin dependencias.
 
-## ✨ Características Premium
+## 💎 Experiencia de Usuario (UX) Superior
 
-- **🎨 UI de Clase Mundial**: Iconos flotantes animados, micro-interacciones y diseño "Glassmorphism".
-- **🧠 Inteligencia Artificial**: Detecta errores tipográficos (`gmil.com` -> `gmail.com`) y sugiere correcciones en un clic.
-- **⚡ Performance**: Debounce inteligente y animaciones optimizadas (60fps).
-- **♿ Accesibilidad**: Soporte completo para lectores de pantalla (ARIA).
-- **🛠️ Developer Friendly**: Arquitectura orientada a objetos y definiciones TypeScript.
+- **Smart Typo Correction**: Detecta y sugiere correcciones automáticas para errores comunes (ej: `gmil.com` → `gmail.com`) con interacción de un solo clic.
+- **Feedback Visual Inmersivo**: Iconos flotantes animados, micro-interacciones a 60fps y diseño *Glassmorphism* que se integra elegantemente en cualquier UI moderna.
+- **Accesibilidad First**: Soporte nativo ARIA para garantizar una experiencia inclusiva y compatible con lectores de pantalla.
+
+## 🏗️ Arquitectura Técnica
+
+- **Zero-Dependency & Lightweight**: Vanilla JS puro optimizado para tiempos de carga insignificantes.
+- **Developer Experience (DX)**: Inicialización automática vía atributos HTML o control total vía API JavaScript. Incluye definiciones TypeScript (`.d.ts`) para un desarrollo tipado y seguro.
+- **Resiliencia**: Lógica de *Debounce* adaptativo y manejo de errores de red silenciosos para no bloquear nunca el flujo de registro del usuario.
 
 ## 🚀 Instalación Rápida
 
@@ -16,7 +20,7 @@ Agrega el script y configura tu API Key. El widget se inicializa automáticament
 
 ```html
 <script 
-    src="https://cdn.mailsafepro.com/widget.js" 
+    src="https://pub-4e05862c586a4196a7963e1935ed8b61.r2.dev/mailsafepro-widget.js" 
     data-api-key="TU_API_KEY" 
     data-input-id="email-input"
 ></script>
