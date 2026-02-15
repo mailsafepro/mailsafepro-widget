@@ -9,7 +9,7 @@
 
     // --- Constants & Config ---
     const DEFAULTS = {
-        apiUrl: 'https://email-validation-api-jlra.onrender.com/email',
+        apiUrl: 'https://mailsafepro-api.fly.dev/validate/email',
         debounceTime: 600,
         checkSmtp: false,
         theme: 'default', // 'default' | 'minimal'
@@ -289,7 +289,7 @@
                 return;
             }
 
-            // 3. Check Disposable
+            // 3. Check Disposable (API returns is_disposable field)
             if (data.is_disposable) {
                 this._updateUI('invalid', this.options.messages.disposable);
                 return;
@@ -363,6 +363,15 @@
                 'msp-input-valid', 'msp-input-invalid', 'msp-input-risky', 'msp-input-loading'
             );
         }
+
+        destroy() {
+            if (this.state.timer) clearTimeout(this.state.timer);
+            this.input.removeEventListener('input', this._handleInput);
+            this.input.removeEventListener('blur', this._blurHandler);
+            if (this.wrapper && this.wrapper.parentNode) {
+                this.wrapper.parentNode.removeChild(this.wrapper);
+            }
+        }
     }
 
     // --- Auto Initialization ---
@@ -384,7 +393,7 @@
 
                 const baseUrl = scriptTag.getAttribute('data-base-url');
                 if (baseUrl) {
-                    options.apiUrl = baseUrl.replace(/\/+$/, '') + '/email';
+                    options.apiUrl = baseUrl.replace(/\/+$/, '') + '/validate/email';
                 }
 
                 new MailSafeProWidget(input, options);

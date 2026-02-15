@@ -1,7 +1,7 @@
-from fastapi import FastAPI, Request, Body
+from fastapi import FastAPI, Request, Body, HTTPException
 from fastapi.openapi.docs import get_redoc_html
 from fastapi.middleware.cors import CORSMiddleware
-from fastapi.responses import JSONResponse, HTMLResponse
+from fastapi.responses import JSONResponse, HTMLResponse, Response
 from contextlib import asynccontextmanager
 from redis.asyncio import Redis
 import starlette.status as _status
@@ -220,6 +220,16 @@ async def redis_check(request: Request):
     except Exception as e:
         logger.error(f"Redis check failed: {str(e)}")
         return JSONResponse(status_code=500, content={"status": "error", "detail": "Redis unavailable"})
+
+@app.get("/static/mailsafepro-widget.js", include_in_schema=False)
+async def serve_widget():
+    """Serve the MailSafePro widget JS file."""
+    import os
+    widget_path = os.path.join(os.path.dirname(__file__), "mailsafepro-widget.js")
+    if os.path.exists(widget_path):
+        with open(widget_path, "r") as f:
+            return Response(content=f.read(), media_type="application/javascript")
+    raise HTTPException(status_code=404, detail="Widget not found")
 
 # Middleware setup
 app.add_middleware(LoggingMiddleware)
