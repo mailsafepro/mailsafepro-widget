@@ -9,7 +9,7 @@
 
     // --- Constants & Config ---
     const DEFAULTS = {
-        apiUrl: 'https://mailsafepro-api.fly.dev/validate/email',
+        apiUrl: 'https://api.mailsafepro.es/validate/email',
         debounceTime: 600,
         checkSmtp: false,
         theme: 'default', // 'default' | 'minimal'

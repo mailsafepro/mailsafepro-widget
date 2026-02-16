@@ -137,7 +137,7 @@ describe('MailSafeProWidget', () => {
             await widget._validate('test@example.com');
 
             expect(mockFetch).toHaveBeenCalledWith(
-                'https://mailsafepro-api.fly.dev/validate/email',
+                'https://api.mailsafepro.es/validate/email',
                 expect.objectContaining({
                     method: 'POST',
                     headers: expect.objectContaining({

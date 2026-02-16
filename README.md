@@ -20,7 +20,7 @@ Agrega el script y configura tu API Key. El widget se inicializa automáticament
 
 ```html
 <script 
-    src="https://mailsafepro-api.fly.dev/static/mailsafepro-widget.js" 
+    src="https://api.mailsafepro.es/static/mailsafepro-widget.js" 
     data-api-key="TU_API_KEY" 
     data-input-id="email-input"
 ></script>
@@ -42,7 +42,7 @@ Puedes configurar el widget mediante atributos `data-` en la etiqueta `<script>`
 | `data-input-id` | ID del input a validar. | - |
 | `data-check-smtp` | Activa verificación SMTP profunda. | `false` |
 | `data-debounce` | Tiempo de espera (ms) al escribir. | `600` |
-| `data-base-url` | URL base de la API (opcional). | `https://mailsafepro-api.fly.dev` |
+| `data-base-url` | URL base de la API (opcional). | `https://api.mailsafepro.es` |
 
 ### Vía JavaScript (Para SPAs / React / Vue)
 
